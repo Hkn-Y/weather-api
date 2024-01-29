@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Server Side Weather App</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h2>Current Weather by API</h2>
+        <form action="/info" method="post">
+            <input type="text" name="city" placeholder="Enter your city.">
+            <h3>Choose in which unit to display the information:</h3>
+                <input type="radio" id="Kelvin" name="unit" value="">
+                <label for="Kelvin">Kelvin (Standard)</label><br>
+                <input type="radio" id="Metric" name="unit" value="metric">
+                <label for="Metric">Metric (Celcius)</label><br>
+                <input type="radio" id="Imperial" name="unit" value="imperial">
+                <label for="Imperial">Imperial (Fahrenheit)</label>
+            <br><br><button type="submit">Submit</button>
+        </form>
+    </body>
+</html>
