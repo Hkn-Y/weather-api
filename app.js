@@ -46,13 +46,7 @@ app.post("/info", function(req, res){
     console.log(weatherArray.city);
     
     //res.status(200).json({acc_exists: weatherArray})
-    if (weatherArray.unit === "metric") 
-    {var degree = "celcius"
-    } else if (weatherArray.unit === "imperial") {
-        var degree = "fahrenheit";
-    } else {
-        var degree = "kelvin";
-    }
+
     https.get(url, function request(res2){
         console.log(res2.statusCode);
         res2.on("data", function(data){
@@ -75,7 +69,13 @@ app.post("/info", function(req, res){
                 "<h1>The temperature in "+weatherArray.city+ " is " + weatherArray.temp + " degrees "+degree+".<br>Description is: " + weatherArray.desc + ".<br><img src="+weatherArray.imgURL+"></h1>");
         });
     });
-
+    if (weatherArray.unit === "metric") 
+    {var degree = "celcius"
+    } else if (weatherArray.unit === "imperial") {
+        var degree = "fahrenheit";
+    } else {
+        var degree = "kelvin";
+    }
     console.log(degree);
     // res.send(
     // "<h1>The temperature in "+weatherArray.city+ " is " + weatherArray.temp + " degrees "+degree+".<br>Description is: " + weatherArray.desc + ".<br><img src="+weatherArray.imgURL+"></h1>");
